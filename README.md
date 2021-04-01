@@ -10,8 +10,8 @@ All screen shots are automatically saved to your Downloads directory in a folder
 <br>
 <br>
 
-<div>Download the latest version here >
-<a href="https://github.com/jparkerweb/steph-shot/raw/main/dist/steph-shot.exe" style="border-radius:5px;background:#088497;color:#fff;padding:10px 20px;margin-left:20px;border:10px solid #E6EDB7; font-size:16px;">STEPH-SHOT.EXE</a>
+<div>Download the latest version here:<br><br>
+<a href="https://github.com/jparkerweb/steph-shot/raw/main/dist/steph-shot.exe"><img src="docs/button.png"/></a>
 </div>
 <br>
 
