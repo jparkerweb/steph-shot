@@ -1,6 +1,6 @@
 <h1 style="color:#088497;">Steph-Shot</h1>
 
-<strong>Steph-Shot</strong> allows you to quickly save a screen shot to disk and copy it to your clipboard.
+<strong>Steph-Shot</strong> allows you to quickly save a screen shot to disk and copy it to your clipboard <span style="color:#999;">(Windows OS required)</span>.  
 
 Once installed, a shortcut will be added to your desktop and by default can be launched by pressing <strong>"Ctrl + Shift + A"</strong> on your keyboard.
 
