@@ -37,4 +37,4 @@ jobs:
         run: cd $GITHUB_WORKSPACE/pr-title-to-label && npm install
 
       - id: label-the-pr
-        run: node app.js
+        run: cd $GITHUB_WORKSPACE/pr-title-to-label && node app.js
