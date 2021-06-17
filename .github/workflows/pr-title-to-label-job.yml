@@ -33,5 +33,7 @@ jobs:
           # token: ${{ secrets.NAME_OF_ACCESS_TOKEN_IF_PRIVATE_REPO }}
           path: pr-title-to-label
           
-      - id: label-the-pr
+      - id: install
         run: cd $GITHUB_WORKSPACE/pr-title-to-label && npm install && node app
+      - id: label-the-pr
+        run: cd $GITHUB_WORKSPACE/pr-title-to-label && node app
