@@ -4,7 +4,7 @@
 
 Once installed, a shortcut will be added to your desktop and by default can be launched by pressing <strong>"Ctrl + Shift + A"</strong> on your keyboard.
 
-All screen shots are automatically saved to your Downloads directory in a folder named <strong><i>"Steph-Shots"</i></strong>.  Additionally, the screen shot is also saved to your clipboard and ready to be pasted if needed.  Happy <i>Steph-Shotting</i> <span style="font-size:21px">📸</span>
+All screen shots are automatically saved to your Downloads directory in a folder named <strong><i>"Steph-Shots"</i></strong>.  Additionally, the screen shot is also saved to your clipboard and ready to be pasted if needed.  Happy <i>Steph-Shotting</i> <span style="font-size:21px">📸</span>!
 
 <img src="docs/steph-shot.png"/>
 <br>
