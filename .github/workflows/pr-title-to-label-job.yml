@@ -38,7 +38,7 @@ jobs:
               },
               {
                 "startsWithString": "docs/",
-                "addLabel": "docs"
+                "addLabel": "documentation"
               }
             ]
 
