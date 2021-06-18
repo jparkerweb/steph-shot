@@ -23,21 +23,45 @@ jobs:
       - uses: actions/github-script@v4
         with:
           script: |
-            console.log("--------------------")
+            console.log("---------------------------------------")
+            console.log("-- apply labels to PR based on title --")
+            console.log("---------------------------------------")
             const title = context.payload.pull_request.title.toLowerCase()
-            //console.log("title", title)
-            //console.log(JSON.stringify(context))
 
-            const labels = ["feature", "bug", "spike", "update"]
+            // define pattern and labels to be applied
+            const labels = [
+              {
+                "findString": "feature/",
+                "addLabel": "feature"
+              },
+              {
+                "findString": "bug/",
+                "addLabel": "bug"
+              },
+              {
+                "findString": "spike/",
+                "addLabel": "spike"
+              },
+              {
+                "findString": "docs/",
+                "addLabel": "docs"
+              }
+            ]
+
+            let applyLabels = []
             labels.forEach(label => {
-              if (title.startsWith(label.toLowerCase())) {
-                console.log(label)
+              if (title.startsWith(label.findString.toLowerCase())) {
+                applyLabels.push(label.addLabel)
+                //console.log("found string, apply label")
               }
             })
 
-            github.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ['update']
-            })
+            if (applyLabels.length > 0) {
+              github.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: applyLabels
+              })
+            }
+            
