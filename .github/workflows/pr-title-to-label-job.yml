@@ -31,28 +31,28 @@ jobs:
             // define pattern and labels to be applied
             const labels = [
               {
-                "findString": "feature/",
+                "startsWithString": "feature/",
                 "addLabel": "feature"
               },
               {
-                "findString": "bug/",
+                "startsWithString": "bug/",
                 "addLabel": "bug"
               },
               {
-                "findString": "spike/",
+                "startsWithString": "spike/",
                 "addLabel": "spike"
               },
               {
-                "findString": "docs/",
+                "startsWithString": "docs/",
                 "addLabel": "docs"
               }
             ]
 
             let applyLabels = []
             labels.forEach(label => {
-              if (title.startsWith(label.findString.toLowerCase())) {
+              if (title.startsWith(label.startsWithString.toLowerCase())) {
                 applyLabels.push(label.addLabel)
-                //console.log("found " + label.findString " in title, will apply label: " + label.addLabel)
+                //console.log("found " + label.startsWithString " in title, will apply label: " + label.addLabel)
               }
             })
 
