@@ -29,4 +29,6 @@ jobs:
             //console.log(JSON.stringify(context))
 
             const labels = ["feature", "bug", "spike", "update"]
-            labels.forEach(label => console.log(label))
+            labels.forEach(label => {
+              console.log(label)
+            })
