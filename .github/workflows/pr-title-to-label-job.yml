@@ -24,6 +24,6 @@ jobs:
         with:
           script: |
             console.log("--------------------")
-            const title = context.payload.pull_request.title
+            const title = context.payload.pull_request.title.toLowerCase()
             console.log("title", title)
             //console.log(JSON.stringify(context))
