@@ -30,5 +30,7 @@ jobs:
 
             const labels = ["feature", "bug", "spike", "update"]
             labels.forEach(label => {
-              console.log(label)
+              if (title.startsWith(label.toLowerCase())) {
+                console.log(label)
+              }
             })
