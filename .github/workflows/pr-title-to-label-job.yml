@@ -23,4 +23,5 @@ jobs:
       - uses: actions/github-script@v4
         with:
           script: |
-            console.log("hi --------------------")
+            console.log("--------------------")
+            console.log(JSON.stringify(context))
