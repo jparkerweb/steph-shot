@@ -26,7 +26,7 @@ jobs:
             console.log("--------------------")
             const title = context.payload.pull_request.title.toLowerCase()
             //console.log("title", title)
-            //console.log(JSON.stringify(context))
+            console.log(JSON.stringify(context))
 
             const labels = ["feature", "bug", "spike", "update"]
             labels.forEach(label => {
