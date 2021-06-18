@@ -52,7 +52,7 @@ jobs:
             labels.forEach(label => {
               if (title.startsWith(label.findString.toLowerCase())) {
                 applyLabels.push(label.addLabel)
-                //console.log("found string, apply label")
+                //console.log("found " + label.findString " in title, will apply label: " + label.addLabel)
               }
             })
 
@@ -63,5 +63,7 @@ jobs:
                 repo: context.repo.repo,
                 labels: applyLabels
               })
+            } else {
+              console.log("no labels applied")
             }
             
