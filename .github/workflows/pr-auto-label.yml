@@ -64,6 +64,7 @@ jobs:
             })
 
             if (applyLabels.length > 0) {
+              console.log("labels applied: " + applyLabels)
               github.issues.addLabels({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
