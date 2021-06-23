@@ -20,7 +20,9 @@ jobs:
             console.log("---------------------------------------")
             console.log("-- apply labels to PR based on title --")
             console.log("---------------------------------------")
+            console.log("context.payload", JSON.stringify(context.payload))
             const title = context.payload.pull_request.title.toLowerCase()
+            
 
             // define pattern and labels to be applied
             const labels = [
