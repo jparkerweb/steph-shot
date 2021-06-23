@@ -1,5 +1,5 @@
-# This action will find a starting string match in a PR title and apply the associated label
-name: pr-title-to-label
+# This action will find a starting string match in a PR title or Branch name and apply the associated label
+name: pr-auto-label
 
 # Controls when the action will run.
 on:
@@ -20,8 +20,8 @@ jobs:
             console.log("---------------------------------------")
             console.log("-- apply labels to PR based on title --")
             console.log("---------------------------------------")
-            console.log("context.payload", JSON.stringify(context.payload))
             const title = context.payload.pull_request.title.toLowerCase()
+            const branchName = context.payload.pull_request.head.ref.toLowerCase()
             
 
             // define pattern and labels to be applied
@@ -58,9 +58,9 @@ jobs:
 
             let applyLabels = []
             labels.forEach(label => {
-              if (title.startsWith(label.startsWithString.toLowerCase())) {
+              if (title.startsWith(label.startsWithString.toLowerCase()) || branchName.startsWith(label.startsWithString.toLowerCase())) {
                 applyLabels.push(label.addLabel)
-                //console.log("found " + label.startsWithString " in title, will apply label: " + label.addLabel)
+                console.log("found " + label.startsWithString", will apply label: " + label.addLabel)
               }
             })
 
