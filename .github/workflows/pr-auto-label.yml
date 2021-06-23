@@ -59,7 +59,7 @@ jobs:
             labels.forEach(label => {
               if (title.startsWith(label.startsWithString.toLowerCase()) || branchName.startsWith(label.startsWithString.toLowerCase())) {
                 applyLabels.push(label.addLabel)
-                console.log("found " + label.startsWithString + ", will apply label: " + label.addLabel)
+                //console.log("found " + label.startsWithString + ", will apply label: " + label.addLabel)
               }
             })
 
