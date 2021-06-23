@@ -1,0 +1,74 @@
+# This action will find a starting string match in a PR title and apply the associated label
+name: pr-title-to-label
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the develop and master/main branch
+  pull_request:
+    branches: [ develop, master, main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  labelit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            console.log("---------------------------------------")
+            console.log("-- apply labels to PR based on title --")
+            console.log("---------------------------------------")
+            const title = context.payload.pull_request.title.toLowerCase()
+
+            // define pattern and labels to be applied
+            const labels = [
+              {
+                "startsWithString": "feature/",
+                "addLabel": "feature"
+              },
+              {
+                "startsWithString": "bug/",
+                "addLabel": "bug"
+              },
+              {
+                "startsWithString": "spike/",
+                "addLabel": "spike"
+              },
+              {
+                "startsWithString": "docs/",
+                "addLabel": "documentation"
+              },
+              {
+                "startsWithString": "[CAB-",
+                "addLabel": "release"
+              },
+              {
+                "startsWithString": "[Snyk]",
+                "addLabel": "chore"
+              },
+              {
+                "startsWithString": "chore/",
+                "addLabel": "chore"
+              }
+            ]
+
+            let applyLabels = []
+            labels.forEach(label => {
+              if (title.startsWith(label.startsWithString.toLowerCase())) {
+                applyLabels.push(label.addLabel)
+                //console.log("found " + label.startsWithString " in title, will apply label: " + label.addLabel)
+              }
+            })
+
+            if (applyLabels.length > 0) {
+              github.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: applyLabels
+              })
+            } else {
+              console.log("no labels applied")
+            }
