@@ -20,9 +20,8 @@ jobs:
             console.log("---------------------------------------")
             console.log("-- apply labels to PR based on title --")
             console.log("---------------------------------------")
-            const title = context.payload.pull_request.title.toLowerCase()
-            const branchName = context.payload.pull_request.head.ref.toLowerCase()
-            
+            const title = context.payload.pull_request.title.toLowerCase() || ""
+            const branchName = context.payload.pull_request.head.ref.toLowerCase() || ""
 
             // define pattern and labels to be applied
             const labels = [
@@ -60,7 +59,7 @@ jobs:
             labels.forEach(label => {
               if (title.startsWith(label.startsWithString.toLowerCase()) || branchName.startsWith(label.startsWithString.toLowerCase())) {
                 applyLabels.push(label.addLabel)
-                console.log("found " + label.startsWithString", will apply label: " + label.addLabel)
+                console.log("found " + label.startsWithString + ", will apply label: " + label.addLabel)
               }
             })
 
