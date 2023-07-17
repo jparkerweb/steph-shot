@@ -6,21 +6,35 @@ Once installed, a shortcut will be added to your desktop and by default can be l
 
 All screen shots are automatically saved to your Downloads directory in a folder named <strong><i>"Steph-Shots"</i></strong>.  Additionally, the screen shot is also saved to your clipboard and ready to be pasted if needed.  Happy <i>Steph-Shotting</i> <span style="font-size:21px">📸</span>
 
+---
+
+### _Install Note_
+If a shortcut for steph-shot isn't created on your Desktop, you will need to manually run the `setup.cmd` from the `libs` folder in the target install directory. The default install location is:  
+`C:\Program Files (x86)\steph-shot`
+
 <img src="docs/steph-shot.png"/>
 <br>
 <br>
 
-<div>Download the latest version here:<br><br>
+---
+
+#### Download the latest version here
+
 <a href="https://github.com/jparkerweb/steph-shot/raw/main/dist/steph-shot.exe"><img src="docs/button.png"/></a>
 </div>
+
+<br>
 <br>
 
 ---
-### Packaging
 
 <br>
-currently `steph-shot` is packaged as an `sfx` file using `winrar`.
-the following options are used:
+<br>
+
+### Packaging
+_information only_  
+
+Here is info on how the `steph-shots` installer is currently built from source. `steph-shot` is packaged as an `sfx` file using `winrar` with the following options:
 
 <img src="docs/1.png"/><br>
 <img src="docs/2.png"/><br>
