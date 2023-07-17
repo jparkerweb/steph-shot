@@ -49,6 +49,6 @@ rem -----------------------------------------
 rem -- let user know screen shot was taken --
 rem -----------------------------------------
 echo Screen Shot taken
-libs\nircmd.exe trayballoon "Steph Shot" "Screenshot was saved: %sshotpath%" "shell32.dll,15" %arg1%
+libs\nircmd.exe trayballoon "Steph Shot" "Screenshot saved to: %sshotpath%" "libs\steph-shot.ico" %arg1%
 
 exit
